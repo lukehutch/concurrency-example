@@ -39,6 +39,7 @@ public class AtomicRecordFetcher2 {
     public static abstract class LazyReference<V, E extends Exception> {
         private V reference;
         private final Semaphore firstGetter = new Semaphore(1);
+        // Need to use AtomicReference for memory safety
         private final AtomicReference<CountDownLatch> initialized = new AtomicReference<CountDownLatch>();
         {
             initialized.set(new CountDownLatch(1));
