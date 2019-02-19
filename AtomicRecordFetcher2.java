@@ -37,7 +37,7 @@ public class AtomicRecordFetcher2 {
      *            an exception type that may be thrown by newInstance(), or {@link RuntimeException} if none.
      */
     public static abstract class LazyReference<V, E extends Exception> {
-        private V reference;
+        private volatile V reference;
         private final Semaphore firstGetter = new Semaphore(1);
         // Need to use AtomicReference for memory safety
         private final AtomicReference<CountDownLatch> initialized = new AtomicReference<CountDownLatch>();
