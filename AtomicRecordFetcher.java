@@ -28,7 +28,7 @@ public class AtomicRecordFetcher {
     private LazyReference<Record, IOException> takeLazyReference() {
         // LazyReference is wrapped in AtomicReference so that resetting the LazyReference back to
         // to "uninitialized" (by replacing the previous LazyReference with a new instance) is an
-        // atomic operation
+        // atomic operation, and is memory-safe
         return theLazyReference.getAndSet(new LazyReference<Record, IOException>() {
             @Override
             public Record newInstance() throws IOException {
