@@ -21,7 +21,7 @@ public class AtomicRecordFetcher2 {
         }
     };
 
-    public Record nextImpl() {
+    public Record nextImpl() throws IOException {
         return null; // TODO placeholder
     }
 
