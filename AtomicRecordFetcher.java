@@ -3,6 +3,10 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicReference;
 
+/**
+ * Feel free to use this code freely, or license it however you want.
+ * @author Luke Hutchison
+ */
 public class AtomicRecordFetcher {
 
     public static class Record {
